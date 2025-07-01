@@ -45,12 +45,6 @@ function Calendar() {
 
     return (
         <div className="flex-grow flex flex-col max-h-screen">
-            <CalendarMenu
-            month={month}
-            year={year}
-            setMonth={setMonth}
-            setYear={setYear}
-            />
             <MonthYear
             month={month}
             year={year}
@@ -58,6 +52,12 @@ function Calendar() {
             <WeekNames/>
             <Month
                 monthCalendar={monthCalendar}
+            />
+            <CalendarMenu
+            month={month}
+            year={year}
+            setMonth={setMonth}
+            setYear={setYear}
             />
         </div>
     );
