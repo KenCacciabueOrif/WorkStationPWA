@@ -17,18 +17,18 @@ export default function manifest(): MetadataRoute.Manifest {
                 type: "image/png"
             },
             {
-                src: "/android-chrome-512x512.png",
+                src: "/favicon-16x16.png",
                 sizes: "16x16",
                 type: "image/png"
             },
             {
-                src: "/android-chrome-512x512.png",
+                src: "/favicon-32x32.png",
                 sizes: "32x32",
                 type: "image/png"
             },
         ],
-        theme_color: "#ffffff",
-        background_color: "#ffffff",
+        theme_color: "#000000",
+        background_color: "#000000",
         display: "standalone",
         scope: '/',
         lang: 'en',

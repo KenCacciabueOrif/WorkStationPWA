@@ -1,4 +1,4 @@
-import { Head } from "next/document";
+import Head from "next/head";
 import SWRegister from "@/components/SWRegister";
 export default function Home() {
   return (
