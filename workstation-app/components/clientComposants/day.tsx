@@ -3,8 +3,6 @@ import React from "react";
 import {IDay} from "../../util/interface/day";
 
 function Day({ day }: { day: IDay }) {
-    
-
     return (
         <div
             className={`border border-slate-700 p-2 h-full ${day.isInMonth
