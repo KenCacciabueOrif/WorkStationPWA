@@ -1,6 +1,7 @@
 "use client"
 import { Temporal } from "@js-temporal/polyfill";
 import React, { useEffect, useState } from "react";
+import Day from "./day";
 
 function Calendar() {
     const [month, setMonth] = useState(Temporal.Now.plainDateISO().month);
@@ -55,6 +56,8 @@ function Calendar() {
         setMonthCalendar(calendar);
     }, [year, month]);
 
+    
+
     return (
         <div className="flex-grow flex flex-col max-h-screen">
             <div className="flex justify-start mb-4">
@@ -79,14 +82,10 @@ function Calendar() {
             </div>
             <div className="grid grid-cols-7 flex-grow">
                 {monthCalendar.map((day, index) => (
-                    <div
-                        key={index}
-                        className={`border border-slate-700 p-2 ${day.isInMonth
-                                ? "bg-black hover:bg-gray-800"
-                                : "bg-slate-500 hover:bg-slate-600 font-light text-slate-400"
-                            }`}
-                    >
-                        {day.date.day}
+                    <div key={index} className="border border-slate-700 p-2" >
+                        <Day
+                        day={day}
+                        />
                     </div>
                 ))}
             </div>
