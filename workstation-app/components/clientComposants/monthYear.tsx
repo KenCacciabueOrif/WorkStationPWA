@@ -5,7 +5,7 @@ import React from "react";
 function MonthYear({year, month}: {year: number, month: number}) {
 
     return (
-        <h2 className="text-lg font-semibold flex justify-center">
+        <h2 className="text-lg font-semibold flex justify-left">
             {Temporal.PlainDate.from({ year, month, day: 1 }).toLocaleString("en", {
                 month: "long",
                 year: "numeric",
