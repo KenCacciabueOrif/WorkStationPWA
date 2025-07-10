@@ -8,20 +8,12 @@ import { Week } from "@/util/class/week";
 import { Day } from "@/util/class/day";
 import { Hour } from "@/util/class/hour";
 import { createYearList, findDay, findHour, findMonth, findSeason, findWeek, findYear } from "@/util/function/oCalendar";
-import OHour from "./oHour";
+import ODay from "./oDay";
+import { State } from "@/util/interface/state";
+import OWeek from "./oWeek";
+import OMonth from "./oMonth";
 
 function Calendar() {
-
-    interface State {
-        currentDate: Temporal.PlainDateTime,
-        currentYearList: Year[] | undefined,
-        calendarYear: Year | undefined,
-        calendarSeason: Season | undefined,
-        calendarMonth: Month | undefined,
-        calendarWeek: Week | undefined,
-        calendarDay: Day | undefined,
-        calendarHour: Hour | undefined
-    }
 
     const [state, setState] = useState<State>()
 
@@ -34,7 +26,7 @@ function Calendar() {
         const currentSeason = findSeason(currentYear?.seasons, Temporal.Now.plainDateTimeISO().month)
 
         const currentMonth = findMonth(currentSeason?.months, Temporal.Now.plainDateTimeISO().month)
-        console.log(currentSeason)
+
         const currentWeek = findWeek(currentMonth?.weeks, Temporal.Now.plainDateTimeISO().weekOfYear || 0)
 
         const currentDay = findDay(currentWeek?.days, Temporal.Now.plainDateTimeISO().day)
@@ -55,12 +47,13 @@ function Calendar() {
 
 
     }, [])
-
+    
     return (
-        <div className={`border flex-grow flex flex-col h-100`}>
-            <div>{state?.calendarYear?.value}: {state?.calendarSeason?.value}: {state?.calendarMonth?.value}: {state?.calendarWeek?.value}: {state?.calendarDay?.value}</div>
-            <OHour
-            hour={state?.calendarHour}
+        <div className={`flex-grow flex flex-col max-h-100`}>
+            <div>{state?.calendarYear?.value}: {state?.calendarSeason?.value}: {state?.calendarMonth?.value}</div>
+            <OMonth
+            state={state}
+            month={state?.calendarMonth}
             />
         </div>
     );

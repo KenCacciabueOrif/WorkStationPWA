@@ -7,7 +7,7 @@ import Calendar from "./oCalendar";
 function TheBox() {
 
     return (
-        <div className={`flex-grow flex flex-col h-100`}>
+        <div className={`flex-grow flex flex-col`}>
             <Calendar/>
         </div>
     );
