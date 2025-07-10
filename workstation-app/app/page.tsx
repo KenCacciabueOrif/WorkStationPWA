@@ -1,3 +1,4 @@
+'use client'
 import Head from "next/head";
 import SWRegister from "@/components/clientComposants/SWRegister";
 import TheBox from "@/components/clientComposants/theBox";

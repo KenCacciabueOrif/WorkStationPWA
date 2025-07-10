@@ -2,7 +2,7 @@
 import React from "react";
 import { Temporal } from "@js-temporal/polyfill";
 import Day from "./boxDay";
-import { IWeek } from "@/util/interface/object";
+import { IDay, IMonth, IWeek } from "@/util/interface/object";
 
 
 
